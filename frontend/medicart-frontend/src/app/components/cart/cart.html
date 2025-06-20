@@ -1,0 +1,31 @@
+<div class="cart-page">
+  <h2>Your Cart</h2>
+
+  <div class="cart-content">
+    <div class="cart-items">
+      <div class="item" *ngFor="let item of cartItems">
+        <img [src]="item.image" />
+        <div class="details">
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.quantity * item.price | currency:'INR' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary">
+      <h3>Order Summary</h3>
+      <div *ngFor="let item of cartItems" class="qty-control">
+        <button (click)="decreaseQty(item)">-</button>
+        <span>{{ item.quantity }}</span>
+        <button (click)="increaseQty(item)">+</button>
+      </div>
+
+      <hr />
+      <p>Subtotal: ₹{{ subtotal }}</p>
+      <p>Shipping: Free</p>
+      <h4>Total: ₹{{ subtotal }}</h4>
+
+      <button class="checkout-btn" (click)="checkout()">Checkout</button>
+    </div>
+  </div>
+</div>

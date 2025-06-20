@@ -1,0 +1,54 @@
+<div class="medicines-page">
+  <h2>Medicines</h2>
+
+  <section class="search-section">
+    <input type="text" class="search-bar" placeholder="Search for medicines..." />
+    <button class="btn">Search</button>
+  </section>
+
+  <div class="filters">
+    <div class="dropdown-group">
+      <select>
+        <option>Category</option>
+        <option>Tablets</option>
+        <option>Syrups</option>
+        <option>Ointments</option>
+      </select>
+
+      <select>
+        <option>Brand</option>
+        <option>GreenPharma</option>
+        <option>MedLife</option>
+        <option>PharmaPlus</option>
+      </select>
+    </div>
+
+    <div class="price-range">
+      <label>Price Range</label>
+      <input type="range" min="0" max="1000" />
+    </div>
+
+    <div class="sort-by">
+      <label>Sort By</label>
+      <select>
+        <option>A-Z</option>
+        <option>Z-A</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="products-container">
+    <a
+      *ngFor="let product of products"
+      [routerLink]="['/product', product.id]"
+      class="product-card"
+    >
+      <img [src]="product.image" [alt]="product.name" />
+      <h4>{{ product.name }}</h4>
+      <p class="desc">{{ product.desc }}</p>
+      <p class="price">Price: {{ product.price }}</p>
+    </a>
+  </div>
+</div>

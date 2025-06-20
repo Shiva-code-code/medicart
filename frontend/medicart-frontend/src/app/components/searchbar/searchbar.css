@@ -1,0 +1,27 @@
+.search-section {
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 200px;
+  margin-left: 200px;
+  
+}
+
+.search-bar {
+  width: 90.5%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+}
+
+.btn{
+  background-color: dodgerblue;
+  border: none;
+  width: 60px;
+  border-right: 20px;
+  border-radius: 20px;
+  height: 35px;
+  color: white;
+}

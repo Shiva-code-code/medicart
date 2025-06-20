@@ -1,0 +1,71 @@
+<div class="product-detail-page" *ngIf="product">
+  <h2>{{ product.name }}</h2>
+
+  <div class="product-image">
+    <img [src]="product.image" [alt]="product.name" />
+  </div>
+
+  <p><strong>500mg</strong></p>
+  <p class="desc">{{ product.desc }}</p>
+
+  <h4>Key Benefits</h4>
+  <ul>
+    <li *ngFor="let benefit of product.benefits">
+      <input type="checkbox" disabled checked /> {{ benefit }}
+    </li>
+  </ul>
+
+  <h4>Dosage Instructions</h4>
+  <p>{{ product.dosage }}</p>
+
+  <h4>Side Effects</h4>
+  <p>
+    Common side effects may include nausea, stomach upset, or drowsiness.
+    If they persist or worsen, consult your doctor.
+  </p>
+
+  <!-- Quantity dropdown -->
+  <select [(ngModel)]="quantity">
+    <option *ngFor="let qty of [1,2,3,4,5]" [value]="qty">{{ qty }}</option>
+  </select>
+
+  <!-- Add to Cart -->
+  <button class="btn" (click)="addToCart()">
+    Add to Cart - {{ product.price }}
+  </button>
+
+  <hr />
+
+  <!-- Customer Reviews -->
+  <h4>Customer Reviews</h4>
+  <div class="review-summary">
+    <h2>4.5</h2>
+    <p>⭐ 120 reviews</p>
+    <div class="rating-bars">
+      <div>⭐ 5 <progress value="40" max="100"></progress></div>
+      <div>⭐ 4 <progress value="30" max="100"></progress></div>
+      <div>⭐ 3 <progress value="15" max="100"></progress></div>
+      <div>⭐ 2 <progress value="10" max="100"></progress></div>
+      <div>⭐ 1 <progress value="5" max="100"></progress></div>
+    </div>
+  </div>
+
+  <div class="user-review">
+    <p><strong>Sophia Bennett</strong> — 2023-08-15</p>
+    <p>⭐⭐⭐⭐⭐</p>
+    <p>These tablets are a lifesaver! Work quickly without harsh side effects. Highly recommended.</p>
+  </div>
+
+  <!-- Submit Review -->
+  <form>
+    <h5>Submit Your Review</h5>
+    <input type="text" placeholder="Your Name" />
+    <textarea placeholder="Your Review"></textarea>
+    <button type="submit" class="btn">Submit Review</button>
+  </form>
+</div>
+
+<!-- Product not found fallback -->
+<div *ngIf="!product" class="product-not-found">
+  <h2>Product not found</h2>
+</div>
