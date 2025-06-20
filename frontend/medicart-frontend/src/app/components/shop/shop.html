@@ -42,13 +42,15 @@
   <div class="products-container">
     <a
       *ngFor="let product of products"
-      [routerLink]="['/product', product.id]"
+      [routerLink]="['/product', product._id]"
       class="product-card"
     >
       <img [src]="product.image" [alt]="product.name" />
       <h4>{{ product.name }}</h4>
-      <p class="desc">{{ product.desc }}</p>
+      <!-- <p class="desc">{{ product.desc }}</p> -->
       <p class="price">Price: {{ product.price }}</p>
     </a>
   </div>
+  <p>Number of products: {{ products.length }}</p>
+
 </div>

@@ -11,6 +11,7 @@ import { ProductService } from '../../services/product';
   styleUrls: ['./shop.css'],
 })
 export class Shop implements OnInit {
+  
   products: any[] = [];
 
   constructor(private productService: ProductService) {}
@@ -21,4 +22,5 @@ export class Shop implements OnInit {
       error: (err) => console.error('Error fetching products:', err),
     });
   }
+  
 }

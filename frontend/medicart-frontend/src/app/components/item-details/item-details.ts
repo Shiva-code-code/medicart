@@ -36,4 +36,5 @@ export class ItemDetails implements OnInit {
       this.product = data;
     });
   }
+  
 }

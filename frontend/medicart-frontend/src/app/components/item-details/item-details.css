@@ -8,8 +8,8 @@
 }
 
 .product-image img {
-  width: 100%;
-  height: auto;
+  width: %;
+  height: 200px;
   border-radius: 15px;
   margin-bottom: 20px;
 }
